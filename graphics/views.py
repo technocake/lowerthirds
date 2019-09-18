@@ -10,7 +10,10 @@ import urllib.parse
 
 
 def index(request):
-    return HttpResponse('Ikke noe her enda.')
+    html = '''
+    <a href='/admin'> admin </a>
+    '''
+    return HttpResponse(html)
 
 
 def lowerthird(request, id):
