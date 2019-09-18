@@ -26,8 +26,8 @@ image:
 	@if [ -z ${tag} ]; then \
 		echo "version not provided:  make v=tag image" && exit 1; \
 	fi
-	docker build -t technocake/lowerthirds.club:${tag} .
-	docker push technocake/lowerthirds.club:${tag}
+	docker build -t technocake/lowerthirds:${tag} .
+	docker push technocake/lowerthirds:${tag}
 
 stack:
 	docker stack deploy -c docker-compose.yml lowerthirds
