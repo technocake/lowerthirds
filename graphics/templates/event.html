@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> {{event.name}} </h1>
+{{event.location}}
+
+
+<p>
+    {{event.start}} - {{event.end}}
+</p>
+
+<table>
+    {% for graphic in event.lowerthirds.all %}
+
+    <tr><td>
+        <img src="{% url 'lowerthird' graphic.id %}" />
+    </td></tr>
+
+    {% endfor %}
+</table>
+
+
+<a href="{% url 'event_download' event.id %}" >
+    <button>
+        Download all (PNG) as zipfile
+    </button>
+</a>
+
+
+{% endblock %}
