@@ -1,9 +1,6 @@
-# Bursdag.club
+# Django Lower Third Generator	
 
-Birthday invitation cards for my sons 6 years birthday party. 
+Generates Lower Third graphics for Creative Crew Bergen,
 
-It lets you create invitational cards, and select one of three pokemons. 
-Jolteon, Flareon or Vapereon.
-
-built with Django
+Using Django and SVG templates.
 
