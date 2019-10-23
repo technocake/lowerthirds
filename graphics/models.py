@@ -6,9 +6,22 @@ from django.db import models
 
 class LowerThird(models.Model):
     name = models.CharField(max_length=255, help_text='Navnet til den som er på tv.')  # noqa
-    title = models.CharField(max_length=255, help_text='Tittelen på talken', blank=True, null=True)  # noqa
+    _title = models.CharField(max_length=255, help_text='Tittelen på talken', blank=True, null=True)  # noqa
 
     event = models.ForeignKey('Event', related_name='lowerthirds', on_delete=models.CASCADE)  # noqa
+
+    @property
+    def title(self):
+        """
+            Showing None as blank string
+        """
+        if self._title is None:
+            return ""
+        return self._title
+
+    @title.setter
+    def title(self, value):
+        self._title = value
 
     def __str__(self):
         return '{} - {}'.format(self.name, self.title)
