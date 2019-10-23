@@ -6,7 +6,7 @@ from django.db import models
 
 class LowerThird(models.Model):
     name = models.CharField(max_length=255, help_text='Navnet til den som er på tv.')  # noqa
-    title = models.CharField(max_length=255, help_text='Tittelen på talken')  # noqa
+    title = models.CharField(max_length=255, help_text='Tittelen på talken', blank=True, null=True)  # noqa
 
     event = models.ForeignKey('Event', related_name='lowerthirds', on_delete=models.CASCADE)  # noqa
 
