@@ -31,4 +31,4 @@ image:
 	docker push technocake/lowerthirds:${tag}
 
 stack:
-	docker stack deploy -c docker-compose.yml lowerthirds
+	docker stack deploy -c docker-stack.yml lowerthirds
