@@ -25,7 +25,7 @@ activate:
 
 image:
 	@if [ -z ${tag} ]; then \
-		echo "version not provided:  make v=tag image" && exit 1; \
+		echo "version not provided:  make tag=tag image" && exit 1; \
 	fi
 	docker build -t technocake/lowerthirds:${tag} .
 	docker push technocake/lowerthirds:${tag}
