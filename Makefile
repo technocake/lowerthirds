@@ -9,7 +9,8 @@ migrate:
 
 migrations:
 	python manage.py makemigrations
-static:
+
+staticfiles:
 	python manage.py collectstatic
 
 install:

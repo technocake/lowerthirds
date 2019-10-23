@@ -16,6 +16,7 @@ class LowerThird(models.Model):
 
 class Event(models.Model):
     name = models.CharField(max_length=255, help_text='Navnet på stream eventet.')  # noqa
+    notes = models.TextField(help_text='Optional notes for the event.', blank=True, null=True)  # noqa
     location = models.CharField(max_length=255, help_text='Stedet det streames ifra.', blank=True, null=True)  # noqa
     start = models.DateTimeField(help_text='Når arrangmentet starter', blank=True, null=True)  # noqa
     end = models.DateTimeField(help_text='Når arrangmentet stopper', blank=True, null=True)  # noqa
