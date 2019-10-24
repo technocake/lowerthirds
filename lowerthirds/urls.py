@@ -23,7 +23,7 @@ admin.site.site_header = 'Creative Crew Bergen - lowerthirds generator'
 admin.autodiscover()
 
 urlpatterns = [
-    path('', graphics.index),
+    path('', graphics.EventListView.as_view()),
     path('admin/', admin.site.urls),
     path('lowerthird/<int:id>', graphics.lowerthird, name='lowerthird'),
     path('lowerthirds', graphics.lowerthirds, name='lowerthirds'),

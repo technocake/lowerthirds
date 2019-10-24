@@ -1,0 +1,14 @@
+<style type="text/css" media="screen">
+    
+</style>
+
+<h1>Live Events</h1>
+<ul>
+{% for event in object_list %}
+    <li><a href="{% url 'event' event.id %}">{{ event.start|date:'Y-m-d H:i' }} - {{ event.name }}</a></li>
+{% empty %}
+    <li>No events yet.</li>
+{% endfor %}
+</ul>
+
+<a href='/admin'> admin </a>

@@ -1,19 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+import urllib.parse
 
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404
+from django.views.generic.list import ListView
+
 from .models import LowerThird, Event
 from . import services
 
-import urllib.parse
 
-
-def index(request):
-    html = '''
-    <a href='/admin'> admin </a>
-    '''
-    return HttpResponse(html)
+class EventListView(ListView):
+    model = Event
 
 
 def lowerthird(request, id):
