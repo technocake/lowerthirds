@@ -7,6 +7,9 @@ from django.db import models
 class Template(models.Model):
     file_name = models.CharField(max_length=255, help_text="filnavn på template for grafikk.")  # noqa
 
+    def __str__(self):
+        return self.file_name
+
 
 class LowerThird(models.Model):
     name = models.CharField(max_length=255, help_text='Navnet til den som er på tv.')  # noqa
