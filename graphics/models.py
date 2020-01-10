@@ -4,10 +4,15 @@ from __future__ import unicode_literals
 from django.db import models
 
 
+class Template(models.Model):
+    file_name = models.CharField(max_length=255, help_text="filnavn på template for grafikk.")  # noqa
+
+
 class LowerThird(models.Model):
     name = models.CharField(max_length=255, help_text='Navnet til den som er på tv.')  # noqa
     _title = models.CharField(max_length=255, help_text='Tittelen på talken', blank=True, null=True)  # noqa
 
+    template = models.ForeignKey('Template', related_name='template', on_delete=models.CASCADE)  # noqa
     event = models.ForeignKey('Event', related_name='lowerthirds', on_delete=models.CASCADE)  # noqa
 
     @property

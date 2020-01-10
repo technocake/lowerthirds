@@ -19,11 +19,13 @@ def lowerthird(request, id):
         The birthday lowerthird
     '''
     item = get_object_or_404(LowerThird, pk=id)
+    template = item.template.file_name
+
     data = {
         'name': item.name,
         'title': item.title,
     }
-    return render(request, 'lowerthird.svg', data, content_type='image/svg+xml')  # noqa
+    return render(request, template, data, content_type='image/svg+xml')  # noqa
 
 
 def lowerthirds(request):

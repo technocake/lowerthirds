@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.contrib import admin
 from django.urls import reverse
 
-from .models import LowerThird, Event
+from .models import LowerThird, Event, Template
 
 
 class LowerThirdAdmin(admin.ModelAdmin):
@@ -63,3 +63,5 @@ class EventAdmin(admin.ModelAdmin):
 
 admin.site.register(LowerThird, LowerThirdAdmin)
 admin.site.register(Event, EventAdmin)
+admin.site.register(Template)
+
