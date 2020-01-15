@@ -31,7 +31,7 @@ def render_lowerthird_to_png(lowerthird, path):
         'title': lowerthird.title,
         'path': path,
     }
-    svg = render_to_string('lowerthird.svg', data)
+    svg = render_to_string(lowerthird.template.file_name, data)
     filename = '{path}/{name}_{title}.png'.format(**data)
     svg2png(bytestring=svg, write_to=filename)  # noqa
 
