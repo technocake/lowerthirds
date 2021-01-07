@@ -1,6 +1,6 @@
 cssselect2==0.2.1
 Django==2.2.4
-lxml==4.4.1
+lxml==4.6.2
 Pillow==6.1.0
 pytz==2019.2
 reportlab==3.5.23
